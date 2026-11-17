@@ -1,0 +1,2 @@
+CREATE DATABASE casamance_experience;
+CREATE DATABASE casamance_notifications;

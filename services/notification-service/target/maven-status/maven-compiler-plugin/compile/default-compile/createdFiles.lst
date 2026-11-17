@@ -1,0 +1,7 @@
+sn/casamance/notification/MailOutbox.class
+sn/casamance/notification/BookingConfirmedNotification.class
+sn/casamance/notification/NotificationHealthController.class
+sn/casamance/notification/NotificationApplication.class
+sn/casamance/notification/MailOutboxDispatcher.class
+sn/casamance/notification/NotificationController.class
+sn/casamance/notification/MailOutboxRepository.class

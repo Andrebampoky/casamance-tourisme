@@ -1,0 +1,7 @@
+/home/demelix/Desktop/ms-reservation/services/notification-service/src/main/java/sn/casamance/notification/BookingConfirmedNotification.java
+/home/demelix/Desktop/ms-reservation/services/notification-service/src/main/java/sn/casamance/notification/MailOutbox.java
+/home/demelix/Desktop/ms-reservation/services/notification-service/src/main/java/sn/casamance/notification/MailOutboxDispatcher.java
+/home/demelix/Desktop/ms-reservation/services/notification-service/src/main/java/sn/casamance/notification/MailOutboxRepository.java
+/home/demelix/Desktop/ms-reservation/services/notification-service/src/main/java/sn/casamance/notification/NotificationApplication.java
+/home/demelix/Desktop/ms-reservation/services/notification-service/src/main/java/sn/casamance/notification/NotificationController.java
+/home/demelix/Desktop/ms-reservation/services/notification-service/src/main/java/sn/casamance/notification/NotificationHealthController.java

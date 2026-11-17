@@ -1,0 +1,12 @@
+flowchart LR
+  Browser["Navigateur Angular"] -->|HTTP /api| Gateway["API Gateway Nginx"]
+  Gateway -->|visits, bookings, tickets, satisfaction| Reservation["Reservation Service"]
+  Gateway -->|itineraries, events| Tourism["Tourism Service"]
+  Tourism -->|HTTP catalogue / disponibilité| Reservation
+  Reservation -->|Outbox + HTTP retry| Notification["Notification Service"]
+  Notification -->|SMTP| Mail["Serveur e-mail"]
+  Reservation --> DB1[("PostgreSQL DB casamance")]
+  Tourism --> DB2[("PostgreSQL DB casamance_experience")]
+  Notification --> DB3[("PostgreSQL DB casamance_notifications")]
+  note["Même conteneur PostgreSQL en Compose local ; bases et accès isolés par service"]
+  DB1 -.-> note

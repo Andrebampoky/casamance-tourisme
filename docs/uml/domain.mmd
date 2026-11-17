@@ -1,0 +1,19 @@
+classDiagram
+  class Visit {id title location category duration price capacity}
+  class Booking {reference visitDate travelers total status}
+  class Ticket {token status createdAt}
+  class MailOutbox {bookingReference recipient status attempts nextAttemptAt}
+  class Itinerary {reference startDate durationDays travelers budget estimatedTotal interests}
+  class ItineraryStop {dayNumber stopOrder visitId title location duration estimatedCost}
+  class TourismEvent {title type location startsAt endsAt imageUrl}
+  class SatisfactionSurvey {submittedAt}
+  class SurveyAnswer {questionId questionPrompt type value}
+  class SurveyQuestion {prompt type options displayOrder active}
+  Visit "1" --> "0..*" Booking : activité choisie
+  Booking "1" --> "0..1" Ticket : billet
+  Booking "1" --> "0..1" MailOutbox : notification
+  Booking "1" --> "0..1" SatisfactionSurvey : enquête
+  SatisfactionSurvey "1" *-- "1..*" SurveyAnswer
+  Itinerary "1" *-- "0..*" ItineraryStop
+  SurveyQuestion .. SurveyAnswer : id/prompt/type copiés
+  ItineraryStop .. Visit : visitId et instantané descriptif

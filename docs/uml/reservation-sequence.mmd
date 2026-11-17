@@ -1,0 +1,17 @@
+sequenceDiagram
+  actor Visiteur
+  participant Angular
+  participant API as BookingService / TicketService
+  participant DB as PostgreSQL
+  participant Admin as Responsable
+  participant Mail as Outbox / SMTP
+  Visiteur->>Angular: activité, date, participants
+  Angular->>API: POST /api/bookings
+  API->>DB: verrouille visite, calcule capacité et total
+  DB-->>API: réservation PENDING
+  API-->>Angular: référence bearer + récapitulatif
+  Admin->>API: confirmation avec jeton admin
+  API->>DB: statut CONFIRMED + ticket + outbox (transaction)
+  API-->>Angular: billet disponible
+  Mail->>DB: récupère notification en attente
+  Mail->>Visiteur: courriel et accès billet (SMTP configuré)
